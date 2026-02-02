@@ -1,6 +1,6 @@
 function About() {
   return (
-    <section className="container mt-5">
+    <section className="container py-5" id="about">
       <h2>About Me</h2>
       <p>
         I am a student and aspiring full stack developer who enjoys building

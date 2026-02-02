@@ -1,17 +1,8 @@
-const projects = [
-  {
-    title: "Portfolio Website",
-    description: "My personal portfolio built using React."
-  },
-  {
-    title: "Student Management System",
-    description: "A web app to manage student records."
-  }
-];
+import { projects } from "../data/projects";
 
 function Projects() {
   return (
-    <section className="container py-5">
+    <section className="container py-5" id="projects">
       <h2>Projects</h2>
 
       <div className="row">

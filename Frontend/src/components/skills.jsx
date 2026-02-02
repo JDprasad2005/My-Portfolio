@@ -2,7 +2,7 @@ const skills = ["HTML", "CSS", "JavaScript", "React", "Node.js", "MongoDB"];
 
 function Skills() {
   return (
-    <section className="container py-5">
+    <section className="container py-5" id="skills">
       <h2>Skills</h2>
       <div className="row mt-3">
         {skills.map((skill, index) => (
