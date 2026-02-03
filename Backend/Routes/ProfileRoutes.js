@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Profile = require("../models/Profile");
+const auth = require("../Middlewares/JwtAuth");
 
 /* GET profile (for frontend display) */
 router.get("/", async (req, res) => {
@@ -9,7 +10,7 @@ router.get("/", async (req, res) => {
 });
 
 /* CREATE or UPDATE profile (admin) */
-router.post("/", async (req, res) => {
+router.post("/",auth, async (req, res) => {
   const existingProfile = await Profile.findOne();
 
   if (existingProfile) {

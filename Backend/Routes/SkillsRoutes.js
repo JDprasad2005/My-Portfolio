@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Skill = require("../models/Skills");
+const auth = require("../Middlewares/JwtAuth");
 
 // Get all skills
 router.get("/", async (req, res) => {
@@ -9,13 +10,13 @@ router.get("/", async (req, res) => {
 });
 
 // Add a skill
-router.post("/", async (req, res) => {
+router.post("/",auth, async (req, res) => {
   const skill = await Skill.create(req.body);
   res.json(skill);
 });
 
 // Delete a skill
-router.delete("/:id", async (req, res) => {
+router.delete("/:id",auth, async (req, res) => {
   await Skill.findByIdAndDelete(req.params.id);
   res.json({ message: "Skill deleted" });
 });

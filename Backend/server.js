@@ -12,9 +12,12 @@ mongoose.connect(process.env.MONGO_URI)
   .catch(err => console.log(err));
 
 
+app.use("/api/auth", require("./Routes/AuthRoutes"));
+
 app.use("/api/profile", require("./Routes/ProfileRoutes"));
 app.use("/api/skills", require("./Routes/SkillsRoutes"));
 app.use("/api/projects", require("./Routes/ProjectRoutes"));
 app.use("/api/connect", require("./Routes/ConnectRoutes"));
+
 
 app.listen(5000, () => console.log("Server running on port 5000"));

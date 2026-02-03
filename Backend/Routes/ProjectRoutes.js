@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const Project = require("../models/Projects");
+const auth = require("../Middlewares/JwtAuth");
 
 // GET all projects (for portfolio frontend)
 router.get("/", async (req, res) => {
@@ -9,13 +10,13 @@ router.get("/", async (req, res) => {
 });
 
 // CREATE project (admin)
-router.post("/", async (req, res) => {
+router.post("/",auth, async (req, res) => {
   const project = await Project.create(req.body);
   res.json(project);
 });
 
 // DELETE project (admin)
-router.delete("/:id", async (req, res) => {
+router.delete("/:id",auth, async (req, res) => {
   await Project.findByIdAndDelete(req.params.id);
   res.json({ message: "Project deleted" });
 });
