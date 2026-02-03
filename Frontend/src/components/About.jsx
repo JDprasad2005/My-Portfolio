@@ -1,26 +1,33 @@
-import './About.css';
+import { useEffect, useState } from "react";
+import "./About.css";
 
 function About() {
-  const tags = ['React', 'Node.js', 'MongoDB', 'JavaScript', 'Express', 'CSS'];
+  const [profile, setProfile] = useState(null);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/profile")
+      .then(res => res.json())
+      .then(data => setProfile(data))
+      .catch(err => console.error("Failed to load profile", err));
+  }, []);
+
+  if (!profile) return null; // or loading spinner
 
   return (
     <section className="about" id="about">
       <div className="about-container">
         <h2 className="about-heading">About Me</h2>
-        
+
         <div className="about-content">
           <div className="about-image">
-            <img src="/profile.jpg" alt="Profile" />
+            <img src={profile.profileImage || "/profile.jpg"} alt="Profile" />
           </div>
-          
+
           <div className="about-text">
-            <p>
-              I am a student and aspiring full stack developer who enjoys building
-              web applications and learning new technologies.
-            </p>
-            
+            <p>{profile.aboutText}</p>
+
             <div className="about-tags">
-              {tags.map((tag, index) => (
+              {profile.tags && profile.tags.map((tag, index) => (
                 <span key={index} className="tag">{tag}</span>
               ))}
             </div>

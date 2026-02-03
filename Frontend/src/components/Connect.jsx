@@ -1,50 +1,42 @@
-import './Connect.css';
+import { useEffect, useState } from "react";
+import "./Connect.css";
 
 function Connect() {
+  const [links, setLinks] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/connect")
+      .then(res => res.json())
+      .then(data => setLinks(data))
+      .catch(err => console.error("Failed to load connect links", err));
+  }, []);
+
   return (
     <section className="connect" id="connect">
       <h2 className="connect-title">Connect / Get in Touch</h2>
 
       <div className="connect-grid">
-        {/* Email Card */}
-        <a href="mailto:adinahawaldar895@gmail.com" className="connect-card">
-          <div className="card-icon email-icon">📧</div>
-          <div className="card-content">
-            <h3>Email</h3>
-            <p className="card-id">adinahawaldar895@gmail.com</p>
-            <span className="card-action">Send message</span>
-          </div>
-        </a>
+        {links.map(link => (
+          <a
+            key={link._id}
+            href={link.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="connect-card"
+          >
+            <div className="card-icon">
+              {link.icon || "🔗"}
+            </div>
 
-        {/* LinkedIn Card */}
-        <a href="https://linkedin.com/in/adinahawaldar" target="_blank" rel="noopener noreferrer" className="connect-card">
-          <div className="card-icon linkedin-icon">💼</div>
-          <div className="card-content">
-            <h3>LinkedIn</h3>
-            <p className="card-id">in/adinahawaldar</p>
-            <span className="card-action">Connect</span>
-          </div>
-        </a>
-
-        {/* GitHub Card */}
-        <a href="https://github.com/adina" target="_blank" rel="noopener noreferrer" className="connect-card">
-          <div className="card-icon github-icon">🐙</div>
-          <div className="card-content">
-            <h3>GitHub</h3>
-            <p className="card-id">@adina</p>
-            <span className="card-action">View code</span>
-          </div>
-        </a>
-
-        {/* Twitter/X Card */}
-        <a href="https://twitter.com/adina" target="_blank" rel="noopener noreferrer" className="connect-card">
-          <div className="card-icon twitter-icon">🐦</div>
-          <div className="card-content">
-            <h3>Twitter</h3>
-            <p className="card-id">@adina</p>
-            <span className="card-action">Follow</span>
-          </div>
-        </a>
+            <div className="card-content">
+              <h3>{link.platform}</h3>
+              <p className="card-id">{link.displayText}</p>
+              <span className="card-action">
+                {link.actionText || "Open"}
+              </span>
+            </div>
+          </a>
+        ))}
       </div>
     </section>
   );

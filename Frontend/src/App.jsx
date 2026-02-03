@@ -6,6 +6,7 @@ import About from "./components/About";
 import Skills from "./components/skills";
 import Projects from "./components/Projects";
 import Connect from "./components/Connect";
+import Footer from "./components/Footer";
 
 // Admin pages
 import AdminLogin from "./Admin/AdminLogin";
@@ -24,6 +25,7 @@ function PublicPortfolio() {
       <Skills />
       <Projects />
       <Connect />
+      <Footer/>
     </>
   );
 }
