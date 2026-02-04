@@ -1,14 +1,15 @@
 /* Hero.css */
 
 .hero-section {
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  background-color: #f8f7f9; /* Light, slightly off-white background */
+  background-color: #f8f7f9; 
   display: flex;
   align-items: center;
-  padding: 0 10%;
+  padding: 120px 10% 60px 10%; 
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 .hero-container {
@@ -22,17 +23,15 @@
   text-align: left;
 }
 
-/* DARK TEXT FOR NAME */
 .hero-name {
   font-size: clamp(3rem, 8vw, 6.5rem);
   font-weight: 800;
-  color: #0f172a; /* Deep dark slate/black */
-  line-height: 1;
+  color: #0f172a; 
+  line-height: 1.1;
   margin-bottom: 25px;
   letter-spacing: -2px;
 }
 
-/* SUBTITLE WITH PURPLE ACCENT */
 .hero-subtitle-container {
   display: flex;
   align-items: center;
@@ -45,33 +44,33 @@
   text-transform: uppercase;
   letter-spacing: 3px;
   font-weight: 700;
-  color: #ffb342; /* Lavender/Purple from image */
+  color: #ffb342; 
   margin: 0;
 }
 
 .hero-dash {
-  color: #cbd5e1; /* Lighter gray dash */
+  color: #cbd5e1;
   font-size: 1.2rem;
 }
 
-/* DESCRIPTION */
 .hero-description {
   font-size: 1.1rem;
-  color: #334155; /* Dark gray for readability on light bg */
+  color: #334155;
   max-width: 480px;
   line-height: 1.6;
   margin-bottom: 40px;
 }
 
-/* BUTTON BOXES */
 .hero-buttons {
   display: flex;
+  flex-direction: row; /* Horizontal alignment */
   gap: 15px;
+  flex-wrap: wrap;    /* Allows wrapping only if the screen is extremely narrow */
 }
 
 .btn-email {
-  background-color: #ffb342; /* Purple background */
-  color: #000000; /* Black text for contrast */
+  background-color: #ffb342;
+  color: #000000;
   padding: 16px 32px;
   font-size: 0.95rem;
   font-weight: 700;
@@ -80,13 +79,13 @@
   display: flex;
   align-items: center;
   transition: 0.3s;
-  border: 1px solid #000000; /* Dark border like the screenshot */
+  border: 1px solid #000000;
 }
 
 .btn-resume {
   background-color: #ffffff;
   color: #000000;
-  border: 1px solid #cbd5e1; /* Light border */
+  border: 1px solid #cbd5e1;
   padding: 16px 32px;
   font-size: 0.95rem;
   font-weight: 700;
@@ -97,11 +96,6 @@
   transition: 0.3s;
 }
 
-.arrow {
-  margin-left: 8px;
-}
-
-/* THE RIGHT SIDEBAR SOCIALS */
 .hero-socials {
   display: flex;
   flex-direction: column;
@@ -109,35 +103,17 @@
   padding-left: 40px;
 }
 
-
-/* Responsive Scaling */
-/* Hero.css */
-
-.hero-section {
-  min-height: 100vh;
-  width: 100%;
-  background-color: #f8f7f9; 
-  display: flex;
-  align-items: center;
-  /* Top padding must be high enough to clear the new 2-row navbar */
-  padding: 160px 10% 60px 10%; 
-  position: relative;
-  overflow: hidden;
-  box-sizing: border-box;
-}
-
-.hero-content {
-  text-align: left;
-}
-
-/* ... keep other desktop styles the same ... */
-
+/* MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
   .hero-section {
-    /* Adjusted padding for mobile to clear the stacked navbar */
-    padding: 180px 5% 40px 5%; 
+    /* Clears the taller mobile navbar */
+    padding: 180px 8% 40px 8%; 
     display: block;
     height: auto;
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr;
   }
 
   .hero-name {
@@ -148,14 +124,27 @@
   .hero-subtitle-container {
     justify-content: flex-start;
   }
-  
+
   .hero-description {
     text-align: left;
     margin-left: 0;
+    font-size: 1rem;
+    max-width: 100%;
   }
 
   .hero-buttons {
-    flex-direction: column;
+    flex-direction: row; /* Keeps them on the SAME line */
+    justify-content: flex-start; /* Aligns them to the left */
     gap: 12px;
+  }
+
+  .btn-email, .btn-resume {
+    width: auto; /* Buttons only take up space needed by text */
+    padding: 12px 20px; /* Slightly smaller padding for better mobile fit */
+    font-size: 0.85rem;
+  }
+
+  .hero-socials {
+    display: none;
   }
 }

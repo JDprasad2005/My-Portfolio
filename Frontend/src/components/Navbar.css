@@ -2,10 +2,12 @@
 
 .custom-navbar {
   background-color: #f8f7f9; 
-  padding: 15px 10%; /* Aligns with Hero content left margin */
+  padding: 15px 10%; 
   display: flex;
-  flex-direction: column; /* This creates the two-row layout */
-  align-items: flex-start; /* Keeps everything left-aligned */
+  /* Desktop: Brand on left, Nav on right on one line */
+  flex-direction: row; 
+  justify-content: space-between;
+  align-items: center;
   border-bottom: 1px solid #ececf1;
   z-index: 1000;
   position: fixed; 
@@ -14,15 +16,10 @@
   box-sizing: border-box;
 }
 
-/* TOP ROW: BRAND */
-.navbar-brand {
-  text-decoration: none;
-  margin-bottom: 12px; /* Gap between the Brand and the Links below */
-}
-
 .brand-text {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
 }
 
 .brand-name {
@@ -30,7 +27,6 @@
   font-weight: 800;
   color: #0b0b0b; 
   line-height: 1.1;
-  letter-spacing: -0.5px;
 }
 
 .brand-role {
@@ -42,12 +38,11 @@
   margin-top: 4px;
 }
 
-/* BOTTOM ROW: NAVIGATION OPTIONS */
 .navbar-nav {
   display: flex;
-  flex-direction: row; /* Keeps options in a horizontal line */
+  flex-direction: row; /* Stays horizontal on both Desktop and Mobile */
   list-style: none;
-  gap: 25px; /* Space between each horizontal option */
+  gap: 30px; 
   margin: 0;
   padding: 0;
 }
@@ -55,7 +50,7 @@
 .nav-link {
   text-decoration: none;
   color: #0b0b0b; 
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 700;
   transition: color 0.3s ease;
 }
@@ -64,17 +59,27 @@
   color: #ffb342;
 }
 
-/* MOBILE OPTIMIZATION */
+/* MOBILE ADAPTATION */
 @media (max-width: 768px) {
   .custom-navbar {
-    padding: 15px 5%; /* Tighten padding for mobile */
+    /* Stacks Brand (Top Row) and Nav (Bottom Row) */
+    flex-direction: column; 
+    align-items: flex-start; /* Aligns both rows to the left */
+    padding: 15px 8%;
+    gap: 15px; /* Vertical space between Name/Role and the Options row */
   }
 
   .navbar-nav {
-    gap: 15px; /* Links slightly closer on mobile */
+    /* Keeps options side-by-side horizontally below the name */
     width: 100%;
-    overflow-x: auto; /* Allow scrolling if screen is too narrow */
-    white-space: nowrap; 
-    padding-bottom: 5px;
+    justify-content: flex-start;
+    gap: 18px;
+    overflow-x: auto; /* Allows scrolling if the links are too long for the screen */
+    white-space: nowrap;
+    padding-bottom: 5px; /* Small space for scrollbar clearance if needed */
+  }
+
+  .nav-link {
+    font-size: 0.85rem; /* Slightly smaller for mobile fit */
   }
 }
