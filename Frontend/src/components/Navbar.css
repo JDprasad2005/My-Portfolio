@@ -2,23 +2,22 @@
 
 .custom-navbar {
   background-color: #f8f7f9; 
-  /* Reduced padding from 10% to 4% for less gap at sides */
-  padding: 15px 4%; 
+  padding: 15px 10%; /* Aligns with Hero content left margin */
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column; /* This creates the two-row layout */
+  align-items: flex-start; /* Keeps everything left-aligned */
   border-bottom: 1px solid #ececf1;
   z-index: 1000;
-  position: fixed; /* Ensures it stays at the top */
+  position: fixed; 
   top: 0;
   width: 100%;
   box-sizing: border-box;
 }
 
-/* LEFT SIDE: DYNAMIC BRAND */
+/* TOP ROW: BRAND */
 .navbar-brand {
   text-decoration: none;
-  display: block;
+  margin-bottom: 12px; /* Gap between the Brand and the Links below */
 }
 
 .brand-text {
@@ -30,8 +29,8 @@
   font-size: 1.4rem; 
   font-weight: 800;
   color: #0b0b0b; 
-  letter-spacing: -0.5px;
   line-height: 1.1;
+  letter-spacing: -0.5px;
 }
 
 .brand-role {
@@ -40,38 +39,42 @@
   color: #ffb342; /* Golden Orange */
   text-transform: uppercase;
   letter-spacing: 1.5px;
-  margin-top: 8px; /* The gap you requested */
+  margin-top: 4px;
 }
 
-/* RIGHT SIDE: NAVIGATION LINKS */
+/* BOTTOM ROW: NAVIGATION OPTIONS */
 .navbar-nav {
   display: flex;
+  flex-direction: row; /* Keeps options in a horizontal line */
   list-style: none;
-  gap: 35px; 
+  gap: 25px; /* Space between each horizontal option */
   margin: 0;
   padding: 0;
-  align-items: center;
 }
 
 .nav-link {
   text-decoration: none;
   color: #0b0b0b; 
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   font-weight: 700;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
 }
 
 .nav-link:hover {
   color: #ffb342;
 }
 
-/* RESPONSIVE SCALING */
+/* MOBILE OPTIMIZATION */
 @media (max-width: 768px) {
   .custom-navbar {
-    padding: 15px 3%; /* Even tighter for mobile screens */
+    padding: 15px 5%; /* Tighten padding for mobile */
   }
-  
+
   .navbar-nav {
-    gap: 15px;
+    gap: 15px; /* Links slightly closer on mobile */
+    width: 100%;
+    overflow-x: auto; /* Allow scrolling if screen is too narrow */
+    white-space: nowrap; 
+    padding-bottom: 5px;
   }
 }
