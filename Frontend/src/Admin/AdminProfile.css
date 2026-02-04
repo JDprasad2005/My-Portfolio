@@ -1,0 +1,128 @@
+/* AdminProfile.css */
+
+.admin-profile-container {
+  min-height: 100vh;
+  background-color: #f8f7f9;
+  padding: 60px 10%;
+  font-family: sans-serif;
+}
+
+.admin-header {
+  margin-bottom: 40px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0b0b0b;
+  margin: 0 0 5px 0;
+}
+
+.admin-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* MAIN FORM CARD */
+.admin-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid #ececf1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.profile-form {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.full-width {
+  grid-column: span 2;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.input-group input, 
+.input-group textarea {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  transition: all 0.3s;
+}
+
+.input-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.input-group .tall-textarea {
+  min-height: 180px;
+}
+
+.input-group input:focus, 
+.input-group textarea:focus {
+  outline: none;
+  border-color: #ffb342;
+  box-shadow: 0 0 0 4px rgba(255, 179, 66, 0.1);
+}
+
+.save-btn {
+  padding: 16px 40px;
+  background-color: #ffb342;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  align-self: flex-start;
+  transition: all 0.3s ease;
+}
+
+.save-btn:hover {
+  background-color: #ffa51f;
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(255, 179, 66, 0.3);
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .full-width {
+    grid-column: span 1;
+  }
+  .admin-profile-container {
+    padding: 40px 5%;
+  }
+}

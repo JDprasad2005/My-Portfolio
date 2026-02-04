@@ -1,0 +1,141 @@
+/* AdminSkills.css */
+
+.admin-skills-container {
+  min-height: 100vh;
+  background-color: #f8f7f9;
+  padding: 60px 10%;
+  font-family: sans-serif;
+}
+
+.admin-header {
+  margin-bottom: 40px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #2563eb;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0b0b0b;
+  margin: 0 0 5px 0;
+  letter-spacing: -1px;
+}
+
+.admin-header p {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+/* MAIN CARD */
+.admin-card {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 16px;
+  border: 1px solid #ececf1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* FORM STYLING */
+.skill-form {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 40px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.skill-input {
+  flex: 1;
+  padding: 14px 18px;
+  border-radius: 10px;
+  border: 1px solid #cbd5e1;
+  font-size: 1rem;
+  background-color: #f9fafb;
+}
+
+.skill-input:focus {
+  outline: none;
+  border-color: #ffb342;
+  box-shadow: 0 0 0 4px rgba(255, 179, 66, 0.1);
+}
+
+.add-skill-btn {
+  padding: 0 25px;
+  background-color: #ffb342;
+  color: #ffffff;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.add-skill-btn:hover {
+  background-color: #ffa51f;
+  transform: translateY(-2px);
+}
+
+/* SKILLS BADGE LIST */
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-item {
+  display: flex;
+  align-items: center;
+  background-color: #f1f5f9;
+  padding: 8px 16px;
+  border-radius: 50px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.2s;
+}
+
+.skill-item:hover {
+  border-color: #ffb342;
+  background-color: #fffaf0;
+}
+
+.skill-name {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.delete-skill-btn {
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.4rem;
+  margin-left: 8px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+}
+
+.delete-skill-btn:hover {
+  color: #dc2626;
+}
+
+.no-skills {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .admin-skills-container {
+    padding: 40px 5%;
+  }
+  .skill-form {
+    flex-direction: column;
+  }
+}

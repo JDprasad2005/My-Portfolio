@@ -1,33 +1,77 @@
-/* Prevent content hiding behind navbar */
-body {
-  padding-top: 64px;
-}
+/* Navbar.css */
 
-/* Main navbar style */
 .custom-navbar {
-  background: rgba(13, 17, 23, 0.85); /* glassy dark */
-  backdrop-filter: blur(10px);
-  padding: 0.6rem 2rem;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  background-color: #f8f7f9; 
+  /* Reduced padding from 10% to 4% for less gap at sides */
+  padding: 15px 4%; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ececf1;
+  z-index: 1000;
+  position: fixed; /* Ensures it stays at the top */
+  top: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* Brand */
-.custom-navbar .navbar-brand {
-  font-size: 1.3rem;
+/* LEFT SIDE: DYNAMIC BRAND */
+.navbar-brand {
+  text-decoration: none;
+  display: block;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 1.4rem; 
+  font-weight: 800;
+  color: #0b0b0b; 
+  letter-spacing: -0.5px;
+  line-height: 1.1;
+}
+
+.brand-role {
+  font-size: 0.7rem;
   font-weight: 700;
-  color: #ffffff;
-  letter-spacing: 0.5px;
+  color: #ffb342; /* Golden Orange */
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  margin-top: 8px; /* The gap you requested */
 }
 
-/* Links */
-.custom-navbar .nav-link {
-  color: #e5e7eb;
-  margin-left: 1.2rem;
-  font-weight: 500;
-  transition: color 0.2s ease;
+/* RIGHT SIDE: NAVIGATION LINKS */
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  gap: 35px; 
+  margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
-/* Hover */
-.custom-navbar .nav-link:hover {
-  color: #4f46e5;
+.nav-link {
+  text-decoration: none;
+  color: #0b0b0b; 
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+  color: #ffb342;
+}
+
+/* RESPONSIVE SCALING */
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 15px 3%; /* Even tighter for mobile screens */
+  }
+  
+  .navbar-nav {
+    gap: 15px;
+  }
 }

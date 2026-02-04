@@ -1,24 +1,37 @@
+import { useEffect, useState } from "react";
 import "./Footer.css";
 
 function Footer() {
+  const [name, setName] = useState("");
+
+  useEffect(() => {
+    fetch("http://localhost:5000/api/profile")
+      .then(res => res.json())
+      .then(data => {
+        // handle array response
+        if (Array.isArray(data) && data.length > 0) {
+          setName(data[0].name);
+        }
+        // handle object response
+        else if (data && data.name) {
+          setName(data.name);
+        }
+      })
+      .catch(err => console.error("Failed to load profile", err));
+  }, []);
+
   return (
     <footer className="footer">
       <div className="footer-container">
-        <h3 className="footer-name">Your Name</h3>
-        <p className="footer-text">
-          Full Stack Developer | Building modern web applications
-        </p>
 
         <div className="footer-links">
-          <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#skills">Skills</a>
           <a href="#projects">Projects</a>
-          <a href="#connect">Connect</a>
+          <a href="#connect">Contact</a>
         </div>
 
         <p className="footer-copy">
-          © {new Date().getFullYear()} Your Name. All rights reserved.
+          © {new Date().getFullYear()} {name || "Your Name"}. All rights reserved.
         </p>
       </div>
     </footer>

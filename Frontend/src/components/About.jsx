@@ -11,7 +11,7 @@ function About() {
       .catch(err => console.error("Failed to load profile", err));
   }, []);
 
-  if (!profile) return null; // or loading spinner
+  if (!profile) return null;
 
   return (
     <section className="about" id="about">
@@ -20,7 +20,7 @@ function About() {
 
         <div className="about-content">
           <div className="about-image">
-            <img src={profile.profileImage || "/profile.jpg"} alt="Profile" />
+            <img src="/images/me.jpeg" alt="Profile" />
           </div>
 
           <div className="about-text">

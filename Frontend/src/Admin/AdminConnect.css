@@ -1,0 +1,150 @@
+/* AdminConnect.css */
+
+.admin-connect-container {
+  min-height: 100vh;
+  background-color: #f8f7f9;
+  padding: 60px 10%;
+  font-family: sans-serif;
+}
+
+.admin-header {
+  margin-bottom: 30px;
+}
+
+.back-link {
+  text-decoration: none;
+  color: #2563eb; /* Blue link color as per screenshot */
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+
+.admin-header h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0b0b0b;
+  margin: 0;
+}
+
+.admin-header p {
+  color: #64748b;
+  margin-top: 5px;
+}
+
+.admin-card {
+  background: #ffffff;
+  padding: 35px;
+  border-radius: 16px;
+  border: 1px solid #ececf1;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 25px;
+  color: #0b0b0b;
+  font-weight: 700;
+}
+
+/* FORM STYLING */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.input-group label {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #475569;
+}
+
+.input-group input {
+  padding: 14px;
+  border: 1px solid #cbd5e1;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  background-color: #fcfcfd;
+  transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+  outline: none;
+  border-color: #ffb342; /* Golden Orange */
+}
+
+.add-btn {
+  margin-top: 25px;
+  padding: 14px 30px;
+  background-color: #ffb342;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  background-color: #ffa51f;
+}
+
+/* LIST STYLING */
+.link-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 0;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.link-item:last-child {
+  border-bottom: none;
+}
+
+.link-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.platform-tag {
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.display-subtext {
+  font-size: 0.85rem;
+  color: #94a3b8;
+}
+
+.delete-link-btn {
+  background-color: #fee2e2;
+  color: #ef4444;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.delete-link-btn:hover {
+  background-color: #fecaca;
+}
+
+@media (max-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+  .admin-connect-container {
+    padding: 40px 5%;
+  }
+}

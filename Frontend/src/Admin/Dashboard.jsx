@@ -1,16 +1,34 @@
 import { Link } from "react-router-dom";
+import "./Dashboard.css";
 
 function Dashboard() {
-  return (
-    <div>
-      <h2>Admin Dashboard</h2>
+  const menuItems = [
+    { title: "Edit Profile", path: "/admin/profile", desc: "Update your name, title, and bio." },
+    { title: "Manage Skills", path: "/admin/skills", desc: "Add or remove items from your tech stack." },
+    { title: "Manage Projects", path: "/admin/projects", desc: "Showcase your latest work and links." },
+    { title: "Manage Connect", path: "/admin/connect", desc: "Update social media and contact links." },
+  ];
 
-      <ul>
-        <li><Link to="/admin/profile">Edit Profile</Link></li>
-        <li><Link to="/admin/skills">Manage Skills</Link></li>
-        <li><Link to="/admin/projects">Manage Projects</Link></li>
-        <li><Link to="/admin/connect">Manage Connect Links</Link></li>
-      </ul>
+  return (
+    <div className="dashboard-container">
+      <header className="dashboard-header">
+        <h1>Admin Dashboard</h1>
+        <p>Welcome back! Select a section to manage your portfolio.</p>
+      </header>
+
+      <div className="dashboard-grid">
+        {menuItems.map((item, index) => (
+          <Link to={item.path} key={index} className="dashboard-card">
+            <h3>{item.title}</h3>
+            <p>{item.desc}</p>
+            <span className="card-arrow">Manage →</span>
+          </Link>
+        ))}
+      </div>
+
+      <div className="dashboard-footer">
+        <Link to="/" className="logout-btn">Back to Website</Link>
+      </div>
     </div>
   );
 }

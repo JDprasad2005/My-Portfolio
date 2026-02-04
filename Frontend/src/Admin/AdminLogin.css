@@ -1,0 +1,83 @@
+/* Login.css */
+
+.login-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* Clean white background */
+  font-family: sans-serif;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  padding: 40px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft shadow like your image */
+  text-align: center;
+}
+
+.login-subtitle {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.input-group {
+  text-align: left;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 8px;
+  color: #111;
+  font-weight: 500;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f9fafb;
+  box-sizing: border-box;
+}
+
+.login-button {
+  width: 100%;
+  padding: 16px;
+  background-color: #ffb342; /* Your specific Golden Orange */
+  color: #ffffff; /* White text as per image */
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login-footer {
+  margin-top: 20px;
+}
+
+.back-link {
+  color: #2563eb; /* Classic blue link color from your image */
+  text-decoration: underline;
+  font-size: 0.95rem;
+}
+
+.error-text {
+  color: #dc2626;
+  font-size: 0.85rem;
+  margin-top: 15px;
+}

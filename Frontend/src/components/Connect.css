@@ -1,109 +1,97 @@
+/* Connect.css */
+
 .connect {
-  padding: 5rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: 10px 10%;
+  background-color: #f8f7f9; /* Light theme background */
+  text-align: left;
 }
 
 .connect-title {
-  font-size: 2.5rem;
-  font-weight: 700;
-  margin-bottom: 3rem;
-  color: #2c3e50;
+  font-size: 0.9rem;
+  letter-spacing: 4px;
+  color: #94a3b8; /* Muted gray */
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  position: relative;
 }
 
-.connect-title::before {
-  content: '';
-  display: inline-block;
-  width: 60px;
-  height: 4px;
-  background: #2c3e50;
-  margin-right: 1rem;
-  vertical-align: middle;
+.connect-title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 2px;
+  background-color: #ffb342; /* Lavender accent line */
+  margin-top: 10px;
 }
 
 .connect-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 25px;
 }
 
 .connect-card {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
   display: flex;
   align-items: center;
-  gap: 1.5rem;
-  padding: 2rem;
-  background: white;
-  border: 1px solid #e5e7eb;
-  border-radius: 12px;
+  gap: 20px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .connect-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  border-color: #d1d5db;
+  border-color: #ffb342;
+  box-shadow: 0 10px 30px rgba(192, 132, 252, 0.08);
 }
 
 .card-icon {
+  color: #ffb342; /* Purple icons */
+  background-color: #f5f3ff;
   width: 60px;
   height: 60px;
-  border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
-  flex-shrink: 0;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-.email-icon {
-  background: #1f2937;
-}
-
-.linkedin-icon {
-  background: #0077b5;
-}
-
-.github-icon {
-  background: #1f2937;
-}
-
-.twitter-icon {
-  background: #1da1f2;
-}
-
-.card-content {
-  flex: 1;
+.connect-card:hover .card-icon {
+  background-color: #ffb342;
+  color: #ffffff;
 }
 
 .card-content h3 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  color: #1f2937;
-  margin-bottom: 0.3rem;
+  font-size: 1.1rem;
+  color: #0f172a; /* Deep slate */
+  margin: 0 0 4px 0;
+  font-weight: 700;
 }
 
 .card-id {
-  font-size: 0.95rem;
-  color: #6b7280;
-  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+  color: #64748b; /* Muted slate for the ID/Handle */
+  margin: 0 0 10px 0;
 }
 
 .card-action {
-  font-size: 0.9rem;
-  color: #9ca3af;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: #ffb342; /* Purple action text */
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
-/* Mobile */
+/* Responsive adjustments */
 @media (max-width: 768px) {
   .connect {
-    padding: 3rem 1.5rem;
+    padding: 80px 5%;
   }
-
-  .connect-title {
-    font-size: 2rem;
-  }
-
+  
   .connect-grid {
     grid-template-columns: 1fr;
   }
